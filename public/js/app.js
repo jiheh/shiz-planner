@@ -5,13 +5,15 @@ $(".pull-right").click(function() {
 	var type = $(this).parent().find("select").data("type");
 	var name = ($(this).parent().find("select option:selected").val());
 
-	// if (type === 'hotel') {
-		console.log($('ul:contains("hotel-group")').find('div'));
-	// } else if (type === 'restaurant') {
-
-	// } else if (type === 'activity') {
-
-	// }
+	if (type === 'hotel') {
+		$(".hotel-item").append(`<span class="title">${name}</span>`).append('<button class="btn btn-xs btn-danger remove btn-circle">x</button>');
+	}
+	if (type === 'restaurant') {
+		$(".restaurant-item").append(`<span class="title">${name}</span>`).append('<button class="btn btn-xs btn-danger remove btn-circle">x</button>');
+	}
+	if (type === 'activity') {
+		$(".activity-item").append(`<span class="title">${name}</span>`).append('<button class="btn btn-xs btn-danger remove btn-circle">x</button>');
+	}
 
 
 	// Add to map
